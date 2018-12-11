@@ -1,7 +1,15 @@
 
 ---
-- name: Shutdown the PIs
-  hosts: all
+- name: Shutdown the Ubuntu PIs
+  hosts: brainnode:sensornode
+  remote_user: ubuntu
+  become_method: sudo
+  tasks:
+    - name: shutdown
+      command: shutdown -h now
+      sudo: yes
+- name: Shutdown the Raspbian PIs
+  hosts: sinode:willywrt
   remote_user: pi
   become_method: sudo
   tasks:
