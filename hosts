@@ -1,0 +1,10 @@
+[ubuntu]
+brainnode
+sensornode
+
+[ubuntu:vars]
+ansible_ssh_user=ubuntu
+
+[raspbian]
+sinode
+willywrt

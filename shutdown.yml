@@ -1,0 +1,10 @@
+
+---
+- name: Shutdown the PIs
+  hosts: all
+  remote_user: pi
+  become_method: sudo
+  tasks:
+    - name: shutdown
+      command: shutdown -h now
+      sudo: yes
